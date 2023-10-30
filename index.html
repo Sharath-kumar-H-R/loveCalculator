@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Score</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins:ital,wght@0,700;1,300&family=Sacramento&display=swap" rel="stylesheet"> 
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(185, 90, 138);
+        text-align: center;
+      }
+      #container, div{
+    margin-top: 10px;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+
+    h1{
+    font-family: 'Merriweather', serif;
+    }
+    #title, .labels,p{
+        font-family: 'Poppins', cursive;
+    }
+    #container{
+        margin-top: 50px;
+    }
+    input{
+        width: 300px;
+        height: 30px;
+        border-radius: 20px;
+        box-shadow: 0px 10px 50px  0px;
+        background-color:rgb(184, 162, 173);
+    }
+    button{
+        background-color: cadetblue;
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 6px 50px  0px;   
+    }
+    button:hover{
+        background-color: teal;
+    }
+    /* mobile width */
+    @media (max-width:477px) {
+        input {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}   
+#container, div{
+    margin-top: 10px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+input {
+    height: 35px;
+    box-shadow: 0px 10px 30px 0px; 
+}
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+    <form action="#">
+    <h1>Check your Love Score</h1><br><br>
+    <p id="putScore" style="font-family:Sacramento; font-weight: 900; font-size: 40px;">Score will Disply Here</p> <br><br><br>
+    <div>
+        <label for="yourName" class="labels">Enter your Name:</label>&nbsp;
+    <input type="text" required id="fName">&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <div>
+        <label for="partnerName" class="labels">Enter your Partner Name:</label>&nbsp;
+    <input type="text" required id="lName"> <br><br><br>
+    </div>
+    <button type="submit" onclick="score();">Check</button>
+    <br>
+    <br><br><br>
+    <p id="title">Love, a treasure unparalleled, endures through life's tempests, standing unwavering in the face of adversity. 
+    It is a guiding light, a steadfast anchor, never to be forsaken in any circumstance, for its resilience and beauty reside in its unwavering presence,
+    shaping destinies and illuminating the darkest paths with unwavering grace.</p>
+</form>
+<script>
+        function score(){
+    let name1=document.getElementById("fName").value;
+    let name2=document.getElementById("lName").value;
+    if (name1.length !== 0 && name2.length !== 0) {
+            let loveScore = Math.floor(Math.random() * (100-30+1) +30); 
+
+            document.getElementById("putScore").innerHTML = "Your love score is: " + loveScore+"%";
+            document.querySelector("button").disabled = true;
+    }
+}
+</script>
+</div>
+</body>
+</html>
